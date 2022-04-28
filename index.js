@@ -21,9 +21,12 @@ async function handleRequest(request) {
   );
 
   let cors = {};
-  if (origins === "*" || origins.includes(request.headers.origin)) {
+  if (origins.includes(request.headers.origin)) {
     cors["Access-Control-Allow-Origin"] = request.headers.origin;
     cors["Access-Control-Allow-Methods"] = "GET, OPTIONS";
+  } else if (origins.length === 1 && origins[0] === "*") {
+      cors["Access-Control-Allow-Origin"] = "*";
+      cors["Access-Control-Allow-Methods"] = "GET, OPTIONS";
   }
 
   return new Response(resp.body, {
