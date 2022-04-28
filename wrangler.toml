@@ -1,0 +1,16 @@
+name = "api-hook"
+type = "javascript"
+
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2022-04-28"
+
+[vars]
+API_URL = "https://ca-link-tool.xerini.co.uk/api"
+CORS_ORIGINS = "*"
+
+[env.production.vars]
+API_URL = "https://ca-link-tool.xerini.co.uk/api"
+CORS_ORIGINS = "*"
