@@ -11,7 +11,7 @@ const origins = CORS_ORIGINS.split(",");
 async function handleRequest(request) {
   let url = new URL(request.url);
   const resp = await fetch(
-      `${API_URL}/link/${url.pathname}`,
+      `${API_URL}/link${url.pathname}`,
       {
         method: "GET",
         headers: {
