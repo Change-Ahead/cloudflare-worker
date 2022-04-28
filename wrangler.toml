@@ -13,3 +13,7 @@ CORS_ORIGINS = "*"
 
 [env.production]
 route = "api-hook.tech9082.workers.dev/search"
+
+[env.production.vars]
+API_URL = "https://ca-link-tool.xerini.co.uk"
+CORS_ORIGINS = "*"
