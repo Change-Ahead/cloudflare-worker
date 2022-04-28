@@ -10,8 +10,14 @@ const origins = CORS_ORIGINS.split(",");
  */
 async function handleRequest(request) {
   let url = new URL(request.url);
+
+  if (!url.pathname.startsWith("/search")) {
+      return new Response("Not Found", {status: 404})
+  }
+  const path = url.pathname.replace("/search", "");
+
   const resp = await fetch(
-      `${API_URL}/link${url.pathname}`,
+      `${API_URL}/link${path}`,
       {
         method: "GET",
         headers: {
