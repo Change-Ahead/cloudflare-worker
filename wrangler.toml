@@ -6,3 +6,10 @@ workers_dev = true
 route = ""
 zone_id = ""
 compatibility_date = "2022-04-28"
+
+[vars]
+API_URL = "https://ca-link-tool.xerini.co.uk"
+CORS_ORIGINS = "*"
+
+[env.production]
+route = "api-hook.tech9082.workers.dev/search"
