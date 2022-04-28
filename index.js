@@ -21,11 +21,12 @@ async function handleRequest(request) {
   );
 
   let cors = {};
-  if (origin.includes(request.headers.referrer)) {
-    cors["Access-Control-Allow-Origin"] = request.headers.referrer;
+  if (origins.includes(request.headers.origin)) {
+    cors["Access-Control-Allow-Origin"] = request.headers.origin;
     cors["Access-Control-Allow-Methods"] = "GET, OPTIONS";
   }
 
+  console.log(resp.body, cors);
 
   return new Response(resp.body, {
     headers: {
